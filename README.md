@@ -1,4 +1,4 @@
-# ICTrecht Webinar Community Platform
+# ICTRecht Webinar Community Platform
 
 Ter ondersteuning van het ICTRecht live webinar 'Slimmer werken met AI' maken we gezamenlijk een platform.
 
@@ -23,4 +23,4 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) voor de publieke kant en [http://localhost:3000/admin](http://localhost:3000/admin) voor het beheer.
+
