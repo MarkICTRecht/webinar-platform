@@ -2,7 +2,7 @@
 
 Ter ondersteuning van het ICTRecht live webinar 'Slimmer werken met AI' maken we gezamenlijk een platform.
 
-Een intern platform voor de ICTrecht Academy webinar community. Deelnemers kunnen per sessie de opname bekijken, materialen downloaden, een peiling invullen en vragen stellen via de discussie.
+Een intern platform voor de ICTRecht Academy webinar community. Deelnemers kunnen per sessie de materialen downloaden, een peiling invullen en vragen stellen via de discussie.
 
 ## Functionaliteiten
 
