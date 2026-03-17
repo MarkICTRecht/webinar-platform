@@ -3,10 +3,16 @@ import { createClient, Client, InArgs, Row } from '@libsql/client';
 let _client: Client | null = null;
 let _initPromise: Promise<void> | null = null;
 
+function getTursoUrl(): string {
+  const url = process.env.TURSO_DATABASE_URL ?? 'file:./data/webinar.db';
+  // Vercel serverless works better with HTTP than WebSockets
+  return url.replace(/^libsql:\/\//, 'https://');
+}
+
 function getClient(): Client {
   if (!_client) {
     _client = createClient({
-      url: process.env.TURSO_DATABASE_URL ?? 'file:./data/webinar.db',
+      url: getTursoUrl(),
       authToken: process.env.TURSO_AUTH_TOKEN,
     });
   }
