@@ -63,7 +63,7 @@ async function initSchema(): Promise<void> {
       recording_link TEXT DEFAULT '',
       date TEXT DEFAULT '',
       created_at TEXT DEFAULT (datetime('now'))
-    )` },
+    )`, args: [] },
     { sql: `CREATE TABLE IF NOT EXISTS resources (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       webinar_id INTEGER NOT NULL REFERENCES webinars(id) ON DELETE CASCADE,
@@ -71,25 +71,25 @@ async function initSchema(): Promise<void> {
       url TEXT NOT NULL,
       description TEXT DEFAULT '',
       sort_order INTEGER DEFAULT 0
-    )` },
+    )`, args: [] },
     { sql: `CREATE TABLE IF NOT EXISTS polls (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       webinar_id INTEGER NOT NULL UNIQUE REFERENCES webinars(id) ON DELETE CASCADE,
       question TEXT NOT NULL DEFAULT '',
       active INTEGER NOT NULL DEFAULT 0
-    )` },
+    )`, args: [] },
     { sql: `CREATE TABLE IF NOT EXISTS poll_options (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       poll_id INTEGER NOT NULL REFERENCES polls(id) ON DELETE CASCADE,
       text TEXT NOT NULL,
       sort_order INTEGER DEFAULT 0
-    )` },
+    )`, args: [] },
     { sql: `CREATE TABLE IF NOT EXISTS poll_votes (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       option_id INTEGER NOT NULL REFERENCES poll_options(id) ON DELETE CASCADE,
       voter_token TEXT NOT NULL,
       created_at TEXT DEFAULT (datetime('now'))
-    )` },
+    )`, args: [] },
     { sql: `CREATE TABLE IF NOT EXISTS comments (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       webinar_id INTEGER NOT NULL REFERENCES webinars(id) ON DELETE CASCADE,
@@ -100,7 +100,7 @@ async function initSchema(): Promise<void> {
       hidden INTEGER DEFAULT 0,
       pinned INTEGER DEFAULT 0,
       created_at TEXT DEFAULT (datetime('now'))
-    )` },
+    )`, args: [] },
   ], 'write');
 
   // Seed demo data if empty
